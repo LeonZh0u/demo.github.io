@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Accelerometer Demo</title>
-    <style>
+    <style> 
         .indicatorDot {
             width: 30px;
             height: 30px;
@@ -25,6 +25,13 @@
             top: 20%;
             left: 20%;
           }
+          body {
+              background-image: url('tick.png');
+              background-repeat: no-repeat;
+              background-position: center;
+              background-attachment: fixed;
+              background-size: 30% 50%;
+            }
     </style>
 
     <script>
@@ -73,8 +80,9 @@
         }
     </script>
 </head>
-<div class="dashed-circle"></div>
-<body style="background-color:lightblue;">
+<!-- 
+<div class="dashed-circle"></div> -->
+<body style="background-color:white;">
     <button id="accelPermsButton" style="height:50px;" onclick="getAccel()">
         <h1>Get Accelerometer Permissions</h1>
     </button>
