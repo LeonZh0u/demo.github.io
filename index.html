@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Accelerometer Demo</title>
-
     <style>
         .indicatorDot {
             width: 30px;
@@ -13,6 +12,19 @@
             border-radius: 50%;
             position: fixed;
         }
+        .dashed-circle {
+
+            width: 60%; /* Adjust size as needed */
+          
+            height: 60%;
+          
+            border-radius: 50%;
+          
+            border: 3px dashed black; /* Adjust border thickness and color */
+            position: absolute;
+            top: 20%;
+            left: 20%;
+          }
     </style>
 
     <script>
@@ -61,7 +73,7 @@
         }
     </script>
 </head>
-
+<div class="dashed-circle"></div>
 <body style="background-color:lightblue;">
     <button id="accelPermsButton" style="height:50px;" onclick="getAccel()">
         <h1>Get Accelerometer Permissions</h1>
