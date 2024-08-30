@@ -59,8 +59,8 @@
                             vx = Math.max(-2, Math.min(2, vx)) // Clip vx -2, 2
                         }
                         vy = vy + frontToBack_degrees * updateRate;
-                        if (vy > 2 || vy < -2) {
-                            vy = Math.max(-2, Math.min(2, vy)) // Clip vx -2, 2
+                        if (vy > 1 || vy < -1) {
+                            vy = Math.max(-1, Math.min(1, vy)) // Clip vx -2, 2
                         }
                         // Update position and clip it to bounds
                         px = px + vx * .5;
