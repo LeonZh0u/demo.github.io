@@ -39,7 +39,7 @@
         var py = 50;
         var vx = 0.0; // Velocity x and y
         var vy = 0.0;
-        var updateRate = 1 / 120; // Sensor refresh rate
+        var updateRate = 1 / 60; // Sensor refresh rate
 
         function getAccel() {
             DeviceMotionEvent.requestPermission().then(response => {
@@ -55,8 +55,13 @@
                         // Update velocity according to how tilted the phone is
                         // Since phones are narrower than they are long, double the increase to the x velocity
                         vx = vx + leftToRight_degrees * updateRate * 2;
+                        if (vx > 2 || vx < -2) {
+                            vx = Math.max(-2, Math.min(2, vx)) // Clip vx -2, 2
+                        }
                         vy = vy + frontToBack_degrees * updateRate;
-
+                        if (vy > 2 || vy < -2) {
+                            vy = Math.max(-2, Math.min(2, vy)) // Clip vx -2, 2
+                        }
                         // Update position and clip it to bounds
                         px = px + vx * .5;
                         if (px > 98 || px < 0) {
