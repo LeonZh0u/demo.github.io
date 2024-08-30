@@ -54,11 +54,11 @@
 
                         // Update velocity according to how tilted the phone is
                         // Since phones are narrower than they are long, double the increase to the x velocity
-                        vx = vx + leftToRight_degrees * updateRate * 2;
+                        vx = vx + leftToRight_degrees * updateRate;
                         if (vx > 2 || vx < -2) {
                             vx = Math.max(-2, Math.min(2, vx)) // Clip vx -2, 2
                         }
-                        vy = vy + frontToBack_degrees * updateRate;
+                        vy = vy + frontToBack_degrees * updateRate / 2;
                         if (vy > 1 || vy < -1) {
                             vy = Math.max(-1, Math.min(1, vy)) // Clip vx -2, 2
                         }
